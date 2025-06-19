@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ben-studio
+    env: docker # vẫn dùng docker nhưng mình sẽ cấu hình nhẹ
+    plan: free
+    buildCommand: |
+      apt-get update && apt-get install -y unzip curl git php-cli php-mbstring php-xml php-bcmath php-curl php-mysql php-zip php-tokenizer php-common
+      curl -sS https://getcomposer.org/installer | php
+      php composer.phar install
+      php artisan key:generate
+    startCommand: php artisan serve --host 0.0.0.0 --port 10000
+    autoDeploy: true
