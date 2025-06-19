@@ -1,0 +1,349 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  background: #000;
+  color: #fff;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+.navbar-nav .nav-link {
+  color: #fff;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #ccc;
+}
+header .social-icons a {
+  color: #fff;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+/* About Service */
+.carousel-inner img {
+  /* height: 600px; */
+  object-fit: cover;
+}
+.about-text {
+  padding: 40px;
+}
+/* End About Service */
+
+.service-box {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+  color: #000;
+  transition: background-color 0.4s, color 0.4s;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  transition: color 0.4s;
+}
+
+.service-box h5 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  transition: color 0.4s;
+}
+
+.service-box p {
+  font-size: 0.9rem;
+  color: #666;
+  transition: color 0.4s;
+}
+
+.service-box:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.service-box:hover .service-icon,
+.service-box:hover h5,
+.service-box:hover p {
+  color: #fff;
+}
+
+/* Border animation */
+.service-box::before,
+.service-box::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  transition: transform 0.4s ease;
+}
+
+.service-box::before {
+  height: 2px;
+  width: 0%;
+  top: 0;
+  left: 0;
+}
+
+.service-box::after {
+  width: 2px;
+  height: 0%;
+  top: 0;
+  right: 0;
+}
+
+.service-box:hover::before {
+  width: 100%;
+}
+
+.service-box:hover::after {
+  height: 100%;
+}
+
+/* Responsive equal height */
+.equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equal-height > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* flipbox homepage */
+.flip-card {
+  perspective: 1000px;
+  height: 100%;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.flip-front {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-front .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.flip-front img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.flip-back {
+  background-color: #eee;
+  color: #333;
+  transform: rotateX(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.card-col {
+  height: 300px;
+}
+
+@media (max-width: 767px) {
+  .card-col {
+    height: 250px;
+  }
+}
+/* END flipbox homepage */
+
+/* Navbar Portfolio */
+.portfolio-header {
+  text-align: center;
+  /* margin-bottom: 40px; */
+}
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nav-tabs {
+  border: none;
+  justify-content: center;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  padding: 10px 20px;
+  margin: 0 8px;
+  background: #e0e0e0;
+  color: #333;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.nav-tabs .nav-link.active {
+  background-color: #000;
+  color: #fff;
+}
+@media (max-width: 767.98px) {
+  .nav-tabs .nav-link {
+    padding: 10px 10px;
+    margin: 0 5px;
+  }
+}
+@media (max-width: 575.98px) {
+  .nav-tabs .nav-link {
+    font-size: 12px;
+    margin: 0 2px;
+    padding: 10px 8px;
+  }
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+/* END Portfolio  */
+
+/* Footer  */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 0;
+}
+.footer-logo {
+  font-weight: 900;
+  font-size: 2rem;
+}
+.footer-link a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+.footer-link a:hover {
+  text-decoration: underline;
+}
+footer .social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+}
+/* END Footer  */
+
+/* CSS Contact Page  */
+.contact-card {
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  overflow: hidden;
+}
+.contact-info {
+  background: #f3f3f3;
+  padding: 40px;
+  height: 100%;
+}
+.contact-info .info-item {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+.contact-info .info-item i {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-right: 15px;
+}
+.contact-info iframe {
+  border: none;
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+}
+.contact-form {
+  padding: 40px;
+}
+.contact-form .form-control {
+  border-radius: 8px;
+  padding: 12px 15px;
+}
+.contact-form .title {
+  font-family: Gwendolyn !important;
+  font-size: 50px;
+}
+.contact-section .btn-submit {
+  background: #000000;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.contact-section .btn-submit:hover {
+  background: #2f2f2f;
+  color: white;
+}
+/* END Contact Page  */
