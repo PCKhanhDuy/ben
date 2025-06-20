@@ -6,7 +6,9 @@ body {
 header {
     background: #000;
     color: #fff;
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
 }
 .navbar-brand {
     font-weight: 700;
