@@ -203,31 +203,31 @@
           <!-- Tab 1 -->
           <div class="tab-pane fade show active" id="tab-1">
             <div class="row g-lg-4 g-3">
-              <div class="col-md-4 col-sm-6" data-aos="fade-up">
+              <div class="col-md-4 col-6" data-aos="fade-up">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/01.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/02.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/03.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/04.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/05.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/06.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/07.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/08.jpg') }}" alt=""></div>
               </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/09.jpg') }}" alt=""></div>
               </div>
             </div>
@@ -312,31 +312,5 @@
     </div>
     <!-- END Gallery -->
     <!-- END Portfolio -->
-     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var tab2 = document.querySelector('#tab-2');
-            var masonryGrid = tab2.querySelector('.grid');
-
-            var msnry;
-
-            // Nếu tab-2 được mở (sự kiện từ Bootstrap)
-            document.querySelector('button[data-bs-target="#tab-2"]').addEventListener('shown.bs.tab', function() {
-                // Khởi tạo lại Masonry sau khi tab hiển thị
-                msnry = new Masonry(masonryGrid, {
-                    itemSelector: '.grid-item',
-                    percentPosition: true
-                });
-            });
-        });
-    </script>
-    <script>
-        document.querySelector('button[data-bs-target="#tab-3"]').addEventListener('shown.bs.tab', function() {
-            setTimeout(function() {
-                document.querySelectorAll('#tab-3 .beer-slider').forEach(function(slider) {
-                    new BeerSlider(slider);
-                });
-            }, 100);
-        });
-    </script>
 
 @endsection

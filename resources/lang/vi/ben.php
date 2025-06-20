@@ -26,4 +26,20 @@ return [
         'title_3'           => 'KẾT HỢP AI & ẢNH CHỤP',
         'description_3'     => 'Đón đầu xu hướng hình ảnh mới, chúng tôi mang đến những bức ảnh lifestyle độc đáo nhờ sự kết hợp giữa công nghệ AI và sáng tạo thực tế.',
     ],
+    'home_gallery' => [
+        'title'         => 'Thư Viện',
+        'description'   => 'Bộ sưu tập những tác phẩm xuất sắc',
+        'tab_1'         => 'Chụp Ảnh Nội Thất',
+        'tab_2'         => 'Kết Hợp AI',
+        'tab_3'         => 'Chỉnh Ảnh Chuyên Nghiệp',
+    ],  
+    'contact' => [
+        'big_title'     => 'Liên Hệ',
+        'address'       => 'Địa Chỉ',
+        'phone'         => 'Điện Thoại',
+        'email'         => 'Email',
+        'social'        => 'Mạng Xã Hội',
+        'page'          => 'Trang'
+    ],
+    
 ];

@@ -27,6 +27,21 @@ return [
         'title_3'           => 'AI & PHOTOGRAPHY INTEGRATION',
         'description_3'     => 'Embracing the latest visual trends, we create unique lifestyle images through the seamless fusion of AI technology and real-world creativity.',
     ],
+    'home_gallery' => [
+        'title'         => 'My Gallery',
+        'description'   => 'A collection of my best works',
+        'tab_1'         => 'Interior Photography',
+        'tab_2'         => 'AI Integration',
+        'tab_3'         => 'Professional Photo Editing',
+    ],
+    'contact' => [
+        'big_title'     => 'Contact',
+        'address'       => 'Address',
+        'phone'         => 'Phone Number',
+        'email'         => 'Email',
+        'social'        => 'Social',
+        'page'          => 'Page'
+    ],
 
    
 ];

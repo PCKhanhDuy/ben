@@ -8,6 +8,7 @@
         .beer-slider {
             max-width: 100%;
             height: auto;
+            /* aspect-ratio: 4/3; */
             margin-bottom: 1.5rem;
         }
 

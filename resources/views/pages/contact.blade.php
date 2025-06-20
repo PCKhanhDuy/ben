@@ -6,12 +6,8 @@
 @section('content')
     <section class="contact-section my-md-5 my-4 py-xl-3">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold">Contact</h2>
-          <p class="text-muted">
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
-          </p>
+        <div class="text-center mb-md-5 mb-3">
+          <h2 class="fw-bold">{{ __('ben.contact.big_title') }}</h2>
         </div>
 
         <div class="row contact-card">
@@ -21,21 +17,21 @@
               <div class="info-item">
                 <i class="bi bi-geo-alt-fill"></i>
                 <div>
-                  <h6 class="mb-1 fw-semibold">Address</h6>
+                  <h6 class="mb-1 fw-semibold">{{ __('ben.contact.address') }}</h6>
                   <p class="mb-0 text-muted">Di An, Binh Duong , Viet Nam</p>
                 </div>
               </div>
               <div class="info-item">
                 <i class="bi bi-telephone-fill"></i>
                 <div>
-                  <h6 class="mb-1 fw-semibold">Call Us</h6>
+                  <h6 class="mb-1 fw-semibold">{{ __('ben.contact.phone') }}</h6>
                   <p class="mb-0 text-muted">+1 123 456</p>
                 </div>
               </div>
               <div class="info-item">
                 <i class="bi bi-envelope-fill"></i>
                 <div>
-                  <h6 class="mb-1 fw-semibold">Email Us</h6>
+                  <h6 class="mb-1 fw-semibold">{{ __('ben.contact.email') }}</h6>
                   <p class="mb-0 text-muted">info@example.com</p>
                 </div>
               </div>
