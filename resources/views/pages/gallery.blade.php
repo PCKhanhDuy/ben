@@ -152,6 +152,7 @@
         </div>
     </div>
     <!-- END Gallery -->
+     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var tab2 = document.querySelector('#tab-2');
@@ -169,4 +170,11 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new BeerSlider(document.getElementById('slider'), {
+                start: 50 // Vị trí bắt đầu (%)
+            });
+        });
+  </script>         
 @endsection
