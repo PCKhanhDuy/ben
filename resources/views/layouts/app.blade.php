@@ -12,16 +12,16 @@
     <title>@yield('title', 'Home Page')</title>
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/fontawesome/css/all.min.css') }}">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.min.css"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider@1.0.3/dist/BeerSlider.css">
 
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/aos/css/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/aos/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     
-    <link rel="apple-touch-icon" href="{{ asset('images/main-logo.jpg') }}">
-    <link rel="icon" type="image/png" href="{{ asset('images/main-logo.jpg') }}">
+    <link rel="apple-touch-icon" href="{{ secure_asset('images/main-logo.jpg') }}">
+    <link rel="icon" type="image/png" href="{{ secure_asset('images/main-logo.jpg') }}">
 
     <!-- ✅ Thêm preload nếu bạn muốn speed up Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,11 +39,11 @@
 
     @yield('scripts')
     <!-- jQuery -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap JS -->
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/aos/js/aos.js') }}"></script>
+    <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/aos/js/aos.js') }}"></script>
     <script>
         AOS.init();
     </script>
