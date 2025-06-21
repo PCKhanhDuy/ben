@@ -48,13 +48,13 @@
                         <div class="carousel-item">
                             <img src="{{ asset('images/about-us/03.jpg') }}" class="d-block w-100" alt="Slide 3">
                         </div>
-                         <div class="carousel-item">
+                        <div class="carousel-item">
                             <img src="{{ asset('images/about-us/03-.jpg') }}" class="d-block w-100" alt="Slide 3">
                         </div>
                         <div class="carousel-item">
                             <img src="{{ asset('images/about-us/04.jpg') }}" class="d-block w-100" alt="Slide 3">
                         </div>
-                         <div class="carousel-item">
+                        <div class="carousel-item">
                             <img src="{{ asset('images/about-us/04-.jpg') }}" class="d-block w-100" alt="Slide 3">
                         </div>
                     </div>
@@ -188,50 +188,62 @@
         <!-- Tabs -->
         <ul class="nav nav-tabs mb-lg-5 mb-3" id="portfolioTabs" role="tablist">
             <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button">{{ __('ben.home_gallery.tab_1') }}</button>
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1"
+                    type="button">{{ __('ben.home_gallery.tab_1') }}</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button">{{ __('ben.home_gallery.tab_2') }}</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2"
+                    type="button">{{ __('ben.home_gallery.tab_2') }}</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button">{{ __('ben.home_gallery.tab_3') }}</button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3"
+                    type="button">{{ __('ben.home_gallery.tab_3') }}</button>
             </li>
         </ul>
 
         <!-- Tab Content -->
         <div class="tab-content">
-          <!-- Tab 1 -->
-          <div class="tab-pane fade show active" id="tab-1">
-            <div class="row g-lg-4 g-3">
-              <div class="col-md-4 col-sm-6" data-aos="fade-up">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/01.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/02.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/03.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/04.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/05.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/06.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/07.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/08.jpg') }}" alt=""></div>
-              </div>
-              <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-item"><img data-fancybox="product" src="{{ asset('images/product/09.jpg') }}" alt=""></div>
-              </div>
+            <!-- Tab 1 -->
+            <div class="tab-pane fade show active" id="tab-1">
+                <div class="row g-lg-4 g-3">
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/01.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/02.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/03.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/04.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/05.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/06.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/07.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/08.jpg') }}" alt=""></div>
+                    </div>
+                    <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item"><img data-fancybox="product"
+                                src="{{ asset('images/product/09.jpg') }}" alt=""></div>
+                    </div>
+                </div>
             </div>
-          </div>
 
             <!-- Tab 2 -->
             <div class="tab-pane fade" id="tab-2">
@@ -312,7 +324,7 @@
     </div>
     <!-- END Gallery -->
     <!-- END Portfolio -->
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             var tab2 = document.querySelector('#tab-2');
             var masonryGrid = tab2.querySelector('.grid');
@@ -330,13 +342,31 @@
         });
     </script>
     <script>
+        // Thêm vào script hiện tại
         document.querySelector('button[data-bs-target="#tab-3"]').addEventListener('shown.bs.tab', function() {
             setTimeout(function() {
                 document.querySelectorAll('#tab-3 .beer-slider').forEach(function(slider) {
                     new BeerSlider(slider);
+
+                    // Fix cho mobile
+                    if (window.innerWidth <= 768) {
+                        // Ngăn scroll page khi drag slider
+                        slider.addEventListener('touchstart', function(e) {
+                            e.stopPropagation();
+                        }, {
+                            passive: false
+                        });
+
+                        slider.addEventListener('touchmove', function(e) {
+                            e.stopPropagation();
+                        }, {
+                            passive: false
+                        });
+                    }
                 });
             }, 100);
         });
     </script>
+
 
 @endsection
