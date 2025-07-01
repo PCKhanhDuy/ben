@@ -7,6 +7,7 @@ use \App\Http\Controllers\{
     HomeController,
     ContactController,
     GalleryController,
+    TestController,
 };
 
 // ============================== FRONT PAGES ============================== //
@@ -18,6 +19,9 @@ Route::controller(ContactController::class)->group(function () {
 });
 Route::controller(GalleryController::class)->group(function () {
     Route::get('/gallery.html',  'index');
+});
+Route::controller(TestController::class)->group(function () {
+    Route::get('/test.html',  'index');
 });
 Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'vi'])) {
