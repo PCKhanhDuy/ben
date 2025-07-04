@@ -68,4 +68,51 @@
         </div>
       </div>
     </section>
+      <style>
+    .image-compare {
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll(".image-compare").forEach(el => {
+      const viewer = new ImageCompare(el, {
+        controlColor: "#fff",
+        controlShadow: true,
+        addCircle: true,
+        showLabels: true,
+        labelOptions: {
+          before: 'Before',
+          after: 'After'
+        }
+      });
+      viewer.mount();
+    });
+  </script>
 @endsection

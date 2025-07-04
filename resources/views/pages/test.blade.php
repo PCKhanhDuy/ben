@@ -1,53 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Before After Slider</title>
+@extends('layouts.app')
 
-  <!-- Image Compare Viewer CSS -->
+@section('title', 'Test')
+
+@section('content')
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.css" />
 
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 40px;
-      background: #f2f2f2;
-    }
-
     .image-compare {
-      max-width: 700px;
+      max-width: 100%;
       margin: auto;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
-</head>
-<body>
 
-  <h2 style="text-align:center;">Before / After Demo</h2>
-
-  <div class="image-compare">
-    <img src="https://jonathancharles-int.com/catalogue/image/500429-SC-C005-F058_PV-2.jpg" alt="Before">
-    <img src="https://jonathancharles-int.com/catalogue/image/500429-SC-C005-F058_PV-1.jpg" alt="After">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="image-compare">
+          <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-1.jpg" alt="Before">
+          <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-2.jpg" alt="After">
+        </div>
+      </div>
+    </div>
   </div>
+  
 
-  <!-- Image Compare Viewer JS -->
   <script src="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.js"></script>
-
-  <script>
-    const viewer = new ImageCompare(document.querySelector(".image-compare"), {
-      controlColor: "#fff",
-      controlShadow: true,
-      addCircle: true,
-      showLabels: true,
-      labelOptions: {
-        before: 'Before',
-        after: 'After'
-      }
-    });
-    viewer.mount();
-  </script>
-</body>
-</html>
+  
+@endsection

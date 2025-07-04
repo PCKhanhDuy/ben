@@ -275,33 +275,22 @@
             <!-- Tab 3 -->
             <div class="tab-pane fade" id="tab-3">
                 <div class="row g-4">
-                    <!-- Column 1 -->
-                    <div class="col-md-4">
-                        <div class="beer-slider" data-beer-label="After">
-                            <img src="{{ asset('images/after.jpg') }}" alt="Before Image 1">
-                            <div class="beer-reveal" data-beer-label="Before">
-                                <img src="{{ asset('images/before.jpg') }}" alt="After Image 1">
-                            </div>
+                    <div class="col-12 col-md-4">
+                        <div class="image-compare">
+                        <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-1.jpg" alt="Before">
+                        <img src="https://jonathancharles-int.com/catalogue/image/491314-TGO-32L_PV-2.jpg" alt="After">
                         </div>
                     </div>
-
-                    <!-- Column 2 -->
-                    <div class="col-md-4">
-                        <div class="beer-slider" data-beer-label="After">
-                            <img src="{{ asset('images/after.jpg') }}" alt="Before Image 1">
-                            <div class="beer-reveal" data-beer-label="Before">
-                                <img src="{{ asset('images/before.jpg') }}" alt="After Image 1">
-                            </div>
+                    <div class="col-12 col-md-4">
+                        <div class="image-compare">
+                        <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-1.jpg" alt="Before">
+                        <img src="https://jonathancharles-int.com/catalogue/image/491322-MSW-36L_PV-2.jpg" alt="After">
                         </div>
                     </div>
-
-                    <!-- Column 3 -->
-                    <div class="col-md-4">
-                        <div class="beer-slider" data-beer-label="After">
-                            <img src="{{ asset('images/after.jpg') }}" alt="Before Image 1">
-                            <div class="beer-reveal" data-beer-label="Before">
-                                <img src="{{ asset('images/before.jpg') }}" alt="After Image 1">
-                            </div>
+                    <div class="col-12 col-md-4">
+                        <div class="image-compare">
+                        <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-1.jpg" alt="Before">
+                        <img src="https://jonathancharles-int.com/catalogue/image/500424-DPC-24L_PV-2.jpg" alt="After">
                         </div>
                     </div>
                 </div>
@@ -310,16 +299,14 @@
         </div>
     </div>
     <!-- END Gallery -->
+
      <script>
         document.addEventListener("DOMContentLoaded", function() {
             var tab2 = document.querySelector('#tab-2');
             var masonryGrid = tab2.querySelector('.grid');
-
             var msnry;
 
-            // Nếu tab-2 được mở (sự kiện từ Bootstrap)
             document.querySelector('button[data-bs-target="#tab-2"]').addEventListener('shown.bs.tab', function() {
-                // Khởi tạo lại Masonry sau khi tab hiển thị
                 msnry = new Masonry(masonryGrid, {
                     itemSelector: '.grid-item',
                     percentPosition: true
@@ -327,14 +314,4 @@
             });
         });
     </script>
-    <script>
-        document.querySelector('button[data-bs-target="#tab-3"]').addEventListener('shown.bs.tab', function() {
-            setTimeout(function() {
-                document.querySelectorAll('#tab-3 .beer-slider').forEach(function(slider) {
-                    new BeerSlider(slider);
-                });
-            }, 100);
-        });
-    </script>
-
 @endsection
