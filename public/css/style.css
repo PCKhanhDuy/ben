@@ -169,8 +169,8 @@ header .social-icons a {
 }
 
 /* About Service */
-.carousel-inner img {
-    /* height: 600px; */
+.hero-banner .carousel-inner img {
+    height: 700px;
     object-fit: cover;
 }
 

@@ -13,13 +13,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="{{ asset('images/banner/banner-01.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/hero-banner-10.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{{ asset('images/banner/banner-02.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/hero-banner-04.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/banner/banner-03.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/hero-banner-12.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
