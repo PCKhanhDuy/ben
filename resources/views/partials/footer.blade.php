@@ -1,6 +1,6 @@
 <!-- Footer  -->
 <footer>
-    <div class="container">
+    <div class="container-lg">
         <div class="row text-center text-md-start">
             <div class="col-md-3 mb-4">
                 <div class="footer-logo">

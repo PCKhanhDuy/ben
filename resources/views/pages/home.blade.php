@@ -4,7 +4,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div id="carouselExampleDark" class="hero-banner carousel carousel-dark slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
                 aria-label="Slide 1"></button>
@@ -13,13 +13,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="{{ asset('images/banner/hero-banner-10.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/slide-01.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{{ asset('images/banner/hero-banner-04.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/slide-02.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/banner/hero-banner-12.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('images/banner/slide-03.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -36,7 +36,7 @@
     <div class="container my-md-5 my-3 pt-md-5 pt-0">
         <div class="row align-items-center">
             <!-- Slide ảnh -->
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -68,7 +68,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-md-6 about-text">
+            <div class="col-md-7 about-text">
                 <p class="text-muted small">{{ __('ben.about_company.about_company') }}</p>
                 <h3>{{ __('ben.about_company.title') }}</h3>
                 <p>{{ __('ben.about_company.description') }}</p>

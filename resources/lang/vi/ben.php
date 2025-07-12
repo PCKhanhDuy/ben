@@ -34,12 +34,15 @@ return [
         'tab_3'         => 'Chỉnh Ảnh Chuyên Nghiệp',
     ],  
     'contact' => [
-        'big_title'     => 'Liên Hệ',
-        'address'       => 'Địa Chỉ',
-        'phone'         => 'Điện Thoại',
-        'email'         => 'Email',
-        'social'        => 'Mạng Xã Hội',
-        'page'          => 'Trang'
+        'banner-title'       => 'Liên hệ với chúng tôi',
+        'banner-subtitle'    => 'Sẵn sàng biến ý tưởng của bạn thành hiện thực? Hãy cùng thảo luận về nhu cầu chụp ảnh và nội thất của bạn.',
+        'banner-cta'         => 'Liên hệ ngay hôm nay',
+        'big_title'          => 'Liên Hệ',
+        'address'            => 'Địa Chỉ',
+        'phone'              => 'Điện Thoại',
+        'email'              => 'Email',
+        'social'             => 'Mạng Xã Hội',
+        'page'               => 'Trang'
     ],
     
 ];

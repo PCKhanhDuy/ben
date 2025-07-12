@@ -43,7 +43,7 @@
     <script>
         document.querySelectorAll(".image-compare").forEach(el => {
             const viewer = new ImageCompare(el, {
-                controlColor: "#fff",
+                controlColor: "#fff",   
                 controlShadow: true,
                 addCircle: true,
                 showLabels: true,

@@ -35,12 +35,15 @@ return [
         'tab_3'         => 'Professional Photo Editing',
     ],
     'contact' => [
-        'big_title'     => 'Contact',
-        'address'       => 'Address',
-        'phone'         => 'Phone Number',
-        'email'         => 'Email',
-        'social'        => 'Social',
-        'page'          => 'Page'
+        'banner-title'          => 'Get In Touch',
+        'banner-subtitle'       => "Ready to bring your vision to life? Let's discuss your photography and furniture needs.",
+        'banner-cta'            => 'Contact Us Today',
+        'big_title'             => 'Contact',
+        'address'               => 'Address',
+        'phone'                 => 'Phone Number',
+        'email'                 => 'Email',
+        'social'                => 'Social',
+        'page'                  => 'Page'
     ],
 
    
