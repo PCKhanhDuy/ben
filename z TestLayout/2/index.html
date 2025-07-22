@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO NOIR - Photography Gallery</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-brand">
+            <span class="brand-text">STUDIO</span>
+            <span class="brand-accent">NOIR</span>
+        </div>
+        <div class="nav-stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalProjects">24</span>
+                <span class="stat-label">PROJECTS</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" id="activeFilter">ALL</span>
+                <span class="stat-label">CATEGORY</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">FURNITURE</span>
+                    <span class="title-line offset">PHOTOGRAPHY</span>
+                    <span class="title-line">PORTFOLIO</span>
+                </h1>
+                <p class="hero-subtitle">Architectural spaces reimagined through lens</p>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="float-element element-1"></div>
+                    <div class="float-element element-2"></div>
+                    <div class="float-element element-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL TO EXPLORE</span>
+        </div>
+    </section>
+
+    <!-- Filter Controls -->
+    <section class="filter-section">
+        <div class="container-fluid">
+            <div class="filter-container">
+                <div class="filter-grid">
+                    <button class="filter-card active" data-filter="*">
+                        <div class="filter-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="filter-content">
+                            <h3>ALL WORK</h3>
+                            <span class="filter-count">24</span>
+                        </div>
+                    </button>
+                    
+                    <button class="filter-card" data-filter="interior">
+                        <div class="filter-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="filter-content">
+                            <h3>INTERIOR</h3>
+                            <span class="filter-count">8</span>
+                        </div>
+                    </button>
+                    
+                    <button class="filter-card" data-filter="ai">
+                        <div class="filter-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="filter-content">
+                            <h3>AI ENHANCED</h3>
+                            <span class="filter-count">6</span>
+                        </div>
+                    </button>
+                    
+                    <button class="filter-card" data-filter="editing">
+                        <div class="filter-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="filter-content">
+                            <h3>PHOTO EDIT</h3>
+                            <span class="filter-count">5</span>
+                        </div>
+                    </button>
+                    
+                    <button class="filter-card" data-filter="video">
+                        <div class="filter-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="filter-content">
+                            <h3>VIDEO PROD</h3>
+                            <span class="filter-count">5</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search projects..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container-fluid">
+            <div class="broken-grid" id="galleryGrid">
+                <!-- Gallery items will be inserted here -->
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-animation">
+                    <div class="loading-bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <p>LOADING PORTFOLIO</p>
+                </div>
+            </div>
+            
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <div class="no-results-content">
+                    <i class="fas fa-search"></i>
+                    <h3>NO PROJECTS FOUND</h3>
+                    <p>Try adjusting your search criteria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-info">
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <div class="modal-meta">
+                            <span id="modalClient"></span>
+                            <span class="meta-divider">•</span>
+                            <span id="modalYear"></span>
+                            <span class="meta-divider">•</span>
+                            <span id="modalCategory"></span>
+                        </div>
+                    </div>
+                    <div class="modal-controls">
+                        <button class="modal-btn" id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="image-counter" id="imageCounter"></span>
+                        <button class="modal-btn" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="modal-btn close-btn" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="image-container">
+                        <img id="modalImage" src="" alt="" class="modal-image">
+                    </div>
+                    <div class="image-details">
+                        <div class="detail-section">
+                            <h4>PROJECT OVERVIEW</h4>
+                            <p id="modalDescription"></p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>SPECIFICATIONS</h4>
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">CLIENT</span>
+                                    <span class="spec-value" id="modalClientDetail"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">YEAR</span>
+                                    <span class="spec-value" id="modalYearDetail"></span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">CATEGORY</span>
+                                    <span class="spec-value" id="modalCategoryDetail"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

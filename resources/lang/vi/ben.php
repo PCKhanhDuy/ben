@@ -44,5 +44,10 @@ return [
         'social'             => 'Mạng Xã Hội',
         'page'               => 'Trang'
     ],
+    'gallery' => [
+        'banner-title'       => 'Thư Viện Của Chúng Tôi',
+        'banner-subtitle'    => 'Bộ sưu tập những tác phẩm xuất sắc',
+        'banner-cta'         => '',
+    ],
     
 ];

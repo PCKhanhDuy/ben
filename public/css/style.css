@@ -296,16 +296,13 @@ header .flag-icon.flag-vi {
 
 /* About Service */
 .hero-banner .carousel-inner img {
-    height: 600px;
+    height: auto;
     object-fit: cover;
 }
-
 .about-text {
     padding: 40px;
 }
-
 /* End About Service */
-
 .service-box {
     position: relative;
     background-color: #f8f9fa;
@@ -320,31 +317,26 @@ header .flag-icon.flag-vi {
     flex-direction: column;
     justify-content: center;
 }
-
 .service-icon {
     font-size: 40px;
     margin-bottom: 20px;
     transition: color 0.4s;
 }
-
 .service-box h5 {
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 10px;
     transition: color 0.4s;
 }
-
 .service-box p {
     font-size: 0.9rem;
     color: #666;
     transition: color 0.4s;
 }
-
 .service-box:hover {
     background-color: #333;
     color: #fff;
 }
-
 .service-box:hover .service-icon,
 .service-box:hover h5,
 .service-box:hover p {

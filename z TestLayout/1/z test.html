@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Archive - Photography Gallery</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Masonry -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    
+    <link rel="stylesheet" href="z_styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <h1 class="display-1 fw-light mb-3">
+                            Visual
+                            <span class="fw-bold">Archive</span>
+                        </h1>
+                        <p class="lead text-white mb-0">
+                            Curated collection of architectural & interior photography excellence
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="stats-counter">
+                        <div class="counter-number" id="projectCount">24</div>
+                        <div class="counter-label">PROJECTS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="gallery-nav sticky-top">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-8">
+                    <div class="category-filters d-flex flex-wrap gap-2">
+                        <button class="filter-btn active" data-filter="*">
+                            <i class="fas fa-th-large"></i>
+                            <span>All Projects</span>
+                            <span class="badge">24</span>
+                        </button>
+                        <button class="filter-btn" data-filter=".interior">
+                            <i class="fas fa-camera"></i>
+                            <span>Interior Photography</span>
+                            <span class="badge">8</span>
+                        </button>
+                        <button class="filter-btn" data-filter=".ai">
+                            <i class="fas fa-magic"></i>
+                            <span>AI Enhancement</span>
+                            <span class="badge">6</span>
+                        </button>
+                        <button class="filter-btn" data-filter=".editing">
+                            <i class="fas fa-edit"></i>
+                            <span>Photo Editing</span>
+                            <span class="badge">5</span>
+                        </button>
+                        <button class="filter-btn" data-filter=".video">
+                            <i class="fas fa-video"></i>
+                            <span>Video Production</span>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex gap-3 justify-content-lg-end">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Search projects...">
+                        </div>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="masonry">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery -->
+    <main class="gallery-main">
+        <div class="container-fluid px-4 px-lg-5">
+            <!-- Masonry Grid -->
+            <div id="masonryGrid" class="masonry-grid">
+                <!-- Gallery Items will be inserted here by JavaScript -->
+            </div>
+
+            <!-- List View -->
+            <div id="listView" class="list-view d-none">
+                <!-- List items will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading gallery...</p>
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results d-none">
+                <div class="no-results-content">
+                    <i class="fas fa-search fa-3x mb-4"></i>
+                    <h3>No projects found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title-section">
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <p class="modal-subtitle" id="modalSubtitle"></p>
+                    </div>
+                    <div class="modal-controls">
+                        <button type="button" class="nav-btn" id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="image-counter" id="imageCounter"></span>
+                        <button type="button" class="nav-btn" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button type="button" class="close-btn" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row h-100">
+                        <div class="col-lg-9 d-flex align-items-center justify-content-center">
+                            <img id="modalImage" src="" alt="" class="modal-image">
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="image-details">
+                                <div class="detail-section">
+                                    <h5>Project Details</h5>
+                                    <p id="modalDescription"></p>
+                                </div>
+                                <div class="detail-section">
+                                    <h6>Category</h6>
+                                    <span class="category-badge" id="modalCategory"></span>
+                                </div>
+                                <div class="detail-section">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6>Client</h6>
+                                            <p id="modalClient"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6>Year</h6>
+                                            <p id="modalYear"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="z_script.js"></script>
+</body>
+</html>

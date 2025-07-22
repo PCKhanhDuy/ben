@@ -45,6 +45,11 @@ return [
         'social'                => 'Social',
         'page'                  => 'Page'
     ],
+    'gallery' => [
+        'banner-title'          => 'My Gallery',
+        'banner-subtitle'       => "A collection of my best works'",
+        'banner-cta'            => '',
+    ],
 
    
 ];

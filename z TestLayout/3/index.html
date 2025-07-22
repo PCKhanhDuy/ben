@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LENS COLLECTIVE - Avant-garde Photography Gallery</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Diagonal Navigation -->
+    <nav class="diagonal-nav">
+        <div class="nav-content">
+            <div class="brand-section">
+                <h1 class="brand-title">LENS</h1>
+                <span class="brand-subtitle">COLLECTIVE</span>
+            </div>
+            <div class="nav-controls">
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="floating">
+                        <i class="fas fa-th"></i>
+                        <span>FLOATING</span>
+                    </button>
+                    <button class="toggle-btn" data-view="diagonal">
+                        <i class="fas fa-grip-lines-vertical"></i>
+                        <span>DIAGONAL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Diagonal Split -->
+    <section class="hero-diagonal">
+        <div class="diagonal-split">
+            <div class="split-left">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        <span class="title-part">FURNITURE</span>
+                        <span class="title-part offset">PHOTOGRAPHY</span>
+                        <span class="title-part">REDEFINED</span>
+                    </h2>
+                    <p class="hero-description">Where architecture meets artistry through the lens</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="totalCount">24</span>
+                            <span class="stat-label">PROJECTS</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">CATEGORIES</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="floating-preview">
+                    <div class="preview-card card-1"></div>
+                    <div class="preview-card card-2"></div>
+                    <div class="preview-card card-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Selector -->
+    <section class="category-section">
+        <div class="container-fluid">
+            <div class="category-grid">
+                <div class="category-item active" data-category="all">
+                    <div class="category-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>ALL WORK</h3>
+                    <span class="category-count">24</span>
+                    <div class="category-line"></div>
+                </div>
+                
+                <div class="category-item" data-category="interior">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>INTERIOR</h3>
+                    <span class="category-count">8</span>
+                    <div class="category-line"></div>
+                </div>
+                
+                <div class="category-item" data-category="ai">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI ENHANCED</h3>
+                    <span class="category-count">6</span>
+                    <div class="category-line"></div>
+                </div>
+                
+                <div class="category-item" data-category="editing">
+                    <div class="category-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>PHOTO EDIT</h3>
+                    <span class="category-count">5</span>
+                    <div class="category-line"></div>
+                </div>
+                
+                <div class="category-item" data-category="video">
+                    <div class="category-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>VIDEO PROD</h3>
+                    <span class="category-count">5</span>
+                    <div class="category-line"></div>
+                </div>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search projects..." class="search-input">
+                    <div class="search-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Container -->
+    <section class="gallery-container">
+        <div class="container-fluid">
+            <!-- Floating Cards View -->
+            <div class="floating-gallery" id="floatingGallery">
+                <!-- Items will be inserted here -->
+            </div>
+            
+            <!-- Diagonal View -->
+            <div class="diagonal-gallery" id="diagonalGallery" style="display: none;">
+                <!-- Items will be inserted here -->
+            </div>
+            
+            <!-- Loading Animation -->
+            <div class="loading-container" id="loadingContainer">
+                <div class="loading-animation">
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                </div>
+                <p class="loading-text">LOADING PORTFOLIO</p>
+            </div>
+            
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search"></i>
+                <h3>NO PROJECTS FOUND</h3>
+                <p>Try different search terms or categories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Lightbox Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-info">
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <div class="modal-meta">
+                            <span id="modalClient"></span>
+                            <span class="meta-separator">|</span>
+                            <span id="modalYear"></span>
+                            <span class="meta-separator">|</span>
+                            <span id="modalCategory"></span>
+                        </div>
+                    </div>
+                    <div class="modal-controls">
+                        <button class="control-btn" id="prevProject">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="project-counter" id="projectCounter"></span>
+                        <button class="control-btn" id="nextProject">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="control-btn close-btn" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="image-section">
+                        <img id="modalImage" src="" alt="" class="modal-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <p id="modalDescription"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-section">
+                        <div class="detail-group">
+                            <h4>PROJECT OVERVIEW</h4>
+                            <div class="detail-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">CLIENT</span>
+                                    <span class="detail-value" id="modalClientDetail"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">YEAR</span>
+                                    <span class="detail-value" id="modalYearDetail"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">CATEGORY</span>
+                                    <span class="detail-value" id="modalCategoryDetail"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-group">
+                            <h4>TECHNICAL SPECS</h4>
+                            <div class="detail-content">
+                                <div class="detail-item">
+                                    <span class="detail-label">RESOLUTION</span>
+                                    <span class="detail-value">4K Ultra HD</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">FORMAT</span>
+                                    <span class="detail-value">RAW + JPEG</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">PROCESSING</span>
+                                    <span class="detail-value">Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

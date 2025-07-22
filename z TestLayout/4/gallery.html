@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Gallery - Professional Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="gallery-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-camera me-2 fs-4"></i>
+                <span class="fw-bold fs-4">PhotoStudio</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero bg-black text-white py-5 border-bottom border-secondary">
+        <div class="container text-center">
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <i class="fas fa-camera me-3 display-4"></i>
+                <h1 class="display-2 fw-bold mb-0">Gallery</h1>
+            </div>
+            <p class="lead fs-3 text-light mb-4 mx-auto" style="max-width: 800px;">
+                Explore our collection of professional photography work across various categories. 
+                Each image tells a unique story and captures moments that matter.
+            </p>
+            <div class="d-flex align-items-center justify-content-center text-muted">
+                <i class="fas fa-filter me-2"></i>
+                <span class="fs-5">Filter by category below</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="row mb-5">
+                <div class="col-md-6 mx-auto">
+                    <div class="position-relative">
+                        <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                        <input type="text" id="searchInput" class="form-control form-control-lg ps-5 rounded-pill border-2" 
+                               placeholder="Search by title or tags...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-center gap-3" id="categoryFilters">
+                        <button class="btn btn-dark btn-lg rounded-pill px-4 category-btn active" data-category="all">
+                            All Work <span class="badge bg-light text-dark ms-2">24</span>
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg rounded-pill px-4 category-btn" data-category="portraits">
+                            Portraits <span class="badge bg-secondary ms-2">8</span>
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg rounded-pill px-4 category-btn" data-category="weddings">
+                            Weddings <span class="badge bg-secondary ms-2">6</span>
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg rounded-pill px-4 category-btn" data-category="events">
+                            Events <span class="badge bg-secondary ms-2">4</span>
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg rounded-pill px-4 category-btn" data-category="commercial">
+                            Commercial <span class="badge bg-secondary ms-2">3</span>
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg rounded-pill px-4 category-btn" data-category="nature">
+                            Nature <span class="badge bg-secondary ms-2">3</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0" id="resultsCount">
+                        Showing <span class="fw-semibold">24</span> results
+                    </p>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row g-4" id="galleryGrid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="row d-none" id="noResults">
+                <div class="col-12 text-center py-5">
+                    <i class="fas fa-search display-1 text-muted mb-4"></i>
+                    <h3 class="text-muted">No images found</h3>
+                    <p class="text-muted">Try adjusting your search or filter criteria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-black border-0">
+                <div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                
+                <div class="modal-body p-0 position-relative">
+                    <!-- Navigation Buttons -->
+                    <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-3 z-3 rounded-circle" 
+                            id="prevBtn" style="width: 50px; height: 50px;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-3 z-3 rounded-circle" 
+                            id="nextBtn" style="width: 50px; height: 50px;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Image Counter -->
+                    <div class="position-absolute top-0 start-0 m-3 z-3">
+                        <span class="badge bg-dark bg-opacity-75 fs-6 px-3 py-2" id="imageCounter">1 / 24</span>
+                    </div>
+                    
+                    <!-- Main Image -->
+                    <div class="d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+                        <img id="lightboxImage" class="img-fluid" style="max-height: 80vh; object-fit: contain;">
+                    </div>
+                    
+                    <!-- Image Info -->
+                    <div class="position-absolute bottom-0 start-0 end-0 bg-gradient-dark p-4">
+                        <div class="d-flex justify-content-between align-items-end text-white">
+                            <div>
+                                <h3 class="h2 fw-bold mb-2" id="lightboxTitle">Image Title</h3>
+                                <p class="text-light mb-3" id="lightboxDescription">Image description</p>
+                                <div id="lightboxTags" class="d-flex flex-wrap gap-2">
+                                    <!-- Tags will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-light rounded-circle like-btn" data-image-id="">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="btn btn-outline-light rounded-circle">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="btn btn-outline-light rounded-circle">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="fas fa-camera me-2 fs-3"></i>
+                        <span class="h3 fw-bold mb-0">PhotoStudio</span>
+                    </div>
+                    <p class="text-light mb-4" style="max-width: 400px;">
+                        Professional photography services capturing life's most precious moments with 
+                        artistic vision and technical excellence.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <h5 class="fw-semibold mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Portrait Photography</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Event Photography</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Commercial Photography</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Nature Photography</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Photo Editing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3">
+                    <h5 class="fw-semibold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Gallery</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-secondary my-4">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2024 PhotoStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="gallery-script.js"></script>
+</body>
+</html>

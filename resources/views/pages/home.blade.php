@@ -299,7 +299,6 @@
         </div>
     </div>
     <!-- END Gallery -->
-
      <script>
         document.addEventListener("DOMContentLoaded", function() {
             var tab2 = document.querySelector('#tab-2');
