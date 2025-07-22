@@ -9,15 +9,15 @@
     <meta name="author" content="Ben Studio">
     <title>@yield('title', 'Home Page')</title>
     <link href="https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider@1.0.3/dist/BeerSlider.css">
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/aos/css/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/image-compare-viewer/image-compare-viewer.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/main-logo.jpg') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/aos/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/image-compare-viewer/image-compare-viewer.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+    <link rel="apple-touch-icon" href="{{ secure_asset('images/main-logo.jpg') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-    <link rel="icon" type="image/png" href="{{ asset('images/main-logo.jpg') }}">
+    <link rel="icon" type="image/png" href="{{ secure_asset('images/main-logo.jpg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     @yield('head')
@@ -33,10 +33,10 @@
 
     @yield('scripts')
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <script src="{{ asset('vendor/image-compare-viewer/image-compare-viewer.min.js') }}"></script>
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('vendor/aos/js/aos.js') }}"></script>
+    <script src="{{ secure_asset('vendor/image-compare-viewer/image-compare-viewer.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ secure_asset('vendor/aos/js/aos.js') }}"></script>
     <script>
         AOS.init();
     </script>
