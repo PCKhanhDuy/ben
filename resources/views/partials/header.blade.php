@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark p-0">
         <div class="container-lg ps-0">
             <a class="navbar-brand p-0" href="/">
-                <img src="{{ asset('images/main-logo.jpg') }}" class="header-logo" alt="Logo" style="max-width: 100px;">
+                <img src="{{ asset('images/main-logo.jpg') }}" class="header-logo" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
