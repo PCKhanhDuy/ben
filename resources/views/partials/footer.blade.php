@@ -47,9 +47,15 @@
 
         <div class="row footer-bottom text-center">
             <div class="col">
-                &copy; 2025 YourName Photography | All Rights Reserved
+                &copy; <span id="copyright-year"></span> BEN Interior Photography Group. All rights reserved.
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const year = new Date().getFullYear();
+                document.getElementById('copyright-year').textContent = year;
+            });
+        </script>
     </div>
 </footer>
 <!-- End Footer -->

@@ -10,6 +10,11 @@ return [
         'gallery'           => 'Gallery',
         'contact_us'        => 'Contact Us',
     ],
+    'hero_banner' => [
+        'title'         => 'Turn Your Furniture into Visual Art',
+        'subtitle'      => 'Professional Photography & Retouching Services for Interiors and Furnishings',
+        'cta'           => 'View Gallery',
+    ],
 
     'about_company' => [
         'about_company'     => '[ ABOUT US ]',

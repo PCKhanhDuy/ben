@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Slider</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-banner {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        .hero-btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        .hero-btn:hover {
+            background: #fff;
+            color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+        }
+        /* Navigation Controls */
+        .hero-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+        }
+        .hero-dots {
+            display: flex;
+            gap: 15px;
+        }
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .hero-dot.active {
+            background: #fff;
+            transform: scale(1.2);
+        }
+        .hero-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 15;
+        }
+        .hero-arrow {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .hero-arrow:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: #fff;
+            transform: scale(1.1);
+        }
+        .hero-arrow.prev {
+            left: 30px;
+        }
+        .hero-arrow.next {
+            right: 30px;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 60vh;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            .hero-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            .hero-arrow {
+                width: 40px;
+                height: 40px;
+            }
+            .hero-arrow.prev {
+                left: 15px;
+            }
+            .hero-arrow.next {
+                right: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .hero-btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            .hero-content {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-01.jpg');">
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-02.jpg');">
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-03.jpg');">
+        </div>
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Khám Phá Thế Giới</h1>
+            <p class="hero-subtitle">Trải nghiệm những chuyến phiêu lưu tuyệt vời và tạo nên những kỷ niệm đáng nhớ cùng chúng tôi</p>
+            <button class="hero-btn btn">Bắt Đầu Ngay</button>
+        </div>
+        <!-- Navigation Arrows -->
+        <div class="hero-arrows">
+            <div class="hero-arrow prev" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="hero-arrow next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        <!-- Navigation Dots -->
+        <div class="hero-nav">
+            <div class="hero-dots">
+                <div class="hero-dot active" onclick="currentSlide(1)"></div>
+                <div class="hero-dot" onclick="currentSlide(2)"></div>
+                <div class="hero-dot" onclick="currentSlide(3)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        const totalSlides = slides.length;
+        
+        let autoSlideInterval;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlideIndex = index;
+        }
+        function nextSlide() {
+            const nextIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(nextIndex);
+            resetAutoSlide();
+        }
+        function prevSlide() {
+            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
+            resetAutoSlide();
+        }
+        function currentSlide(index) {
+            showSlide(index - 1);
+            resetAutoSlide();
+        }
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoSlide();
+        });
+        const banner = document.querySelector('.hero-banner');
+        banner.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        banner.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+        let touchStartX = 0;
+        let touchEndX = 0;
+        banner.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        banner.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide(); 
+                } else {
+                    prevSlide(); 
+                }
+            }
+        }
+    </script>
+</body>
+</html>

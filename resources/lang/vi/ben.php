@@ -10,6 +10,11 @@ return [
         'gallery'           => 'Thư Viện',
         'contact_us'        => 'Liên hệ',
     ],
+    'hero_banner' => [
+        'title'         => 'Biến nội thất của bạn thành tác phẩm nghệ thuật',
+        'subtitle'      => 'Dịch vụ chụp & chỉnh sửa ảnh chuyên nghiệp cho không gian sống và làm việc',
+        'cta'           => 'Xem Thư Viện',
+    ],
      'about_company' => [
         'about_company'     => '[ Về Chúng Tôi ]',
         'title'             => 'Dịch Vụ Nhiếp Ảnh Toàn Diện',

@@ -4,7 +4,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <div id="carouselExampleDark" class="hero-banner carousel carousel-dark slide">
+    {{-- <div id="carouselExampleDark" class="hero-banner carousel carousel-dark slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
                 aria-label="Slide 1"></button>
@@ -30,10 +30,45 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> --}}
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-01.jpg');">
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-02.jpg');">
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://ben-studio.onrender.com/images/banner/slide-03.jpg');">
+        </div>
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">{{ __('ben.hero_banner.title') }}</h1>
+            <p class="hero-subtitle">{{ __('ben.hero_banner.subtitle') }}</p>
+            <button class="hero-btn btn">{{ __('ben.hero_banner.cta') }}</button>
+        </div>
+        <!-- Navigation Arrows -->
+        <div class="hero-arrows">
+            <div class="hero-arrow prev" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="hero-arrow next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        <!-- Navigation Dots -->
+        <div class="hero-nav">
+            <div class="hero-dots">
+                <div class="hero-dot active" onclick="currentSlide(1)"></div>
+                <div class="hero-dot" onclick="currentSlide(2)"></div>
+                <div class="hero-dot" onclick="currentSlide(3)"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Service  -->
-    <div class="container my-md-5 my-3 pt-md-5 pt-0">
+    <div class="container-lg my-md-5 my-3 pt-md-5 pt-0">
         <div class="row align-items-center">
             <!-- Slide ảnh -->
             <div class="col-md-5">
@@ -77,7 +112,7 @@
     </div>
     <!-- END About Service  -->
 
-    <div class="container py-md-5 py-0">
+    <div class="container-lg py-md-5 py-0">
         <div class="text-center mb-5">
             {{-- <small class="text-muted"></small> --}}
             <h2 class="fw-bold">{{ __('ben.our_services.big_title') }}</h2>
@@ -179,7 +214,7 @@
         </div>
     </div> --}}
     <!-- Gallery -->
-    <div class="container gallery-home py-md-5 py-4">
+    <div class="container-lg gallery-home py-md-5 py-4">
         <div class="portfolio-header mb-lg-4 mb-2">
             <h1>{{ __('ben.home_gallery.title') }}</h1>
             <p class="text-muted m-0">{{ __('ben.home_gallery.description') }}</p>
@@ -196,7 +231,6 @@
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button">{{ __('ben.home_gallery.tab_3') }}</button>
             </li>
         </ul>
-
         <!-- Tab Content -->
         <div class="tab-content">
           <!-- Tab 1 -->
@@ -312,5 +346,80 @@
                 });
             });
         });
+    </script>
+        <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        const totalSlides = slides.length;
+        
+        let autoSlideInterval;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlideIndex = index;
+        }
+        function nextSlide() {
+            const nextIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(nextIndex);
+            resetAutoSlide();
+        }
+        function prevSlide() {
+            const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
+            resetAutoSlide();
+        }
+        function currentSlide(index) {
+            showSlide(index - 1);
+            resetAutoSlide();
+        }
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoSlide();
+        });
+        const banner = document.querySelector('.hero-banner');
+        banner.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        banner.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+        let touchStartX = 0;
+        let touchEndX = 0;
+        banner.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        banner.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide(); 
+                } else {
+                    prevSlide(); 
+                }
+            }
+        }
     </script>
 @endsection
